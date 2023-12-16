@@ -62,7 +62,7 @@ def list_restaurants():
     for eatery in restaurants:
         eatery_name = eatery['name']
         eatery_category = eatery['category']
-        eatery_status = eatery['status']
+        eatery_status = 'Ativado' if eatery['status'] else 'Desativado'
 
         print(f'- {eatery_name} | {eatery_category} | {eatery_status}')
 
