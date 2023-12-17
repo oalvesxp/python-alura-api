@@ -31,11 +31,13 @@ class Eatery:
 
     @property
     def status(self):
-        '''Altera o output do status do objeto Eatery'''
+        '''Altera o output do status do objeto.'''
         return '☑' if self._status else '☐'
     
     def update_status(self):
+        '''Altera o valor do status do objeto.'''
         self._status = not self._status
+
 
 ## Testes e validações
 box_mineito = Eatery('Box Mineiro', 'Caseiro')
