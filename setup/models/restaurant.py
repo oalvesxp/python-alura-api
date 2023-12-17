@@ -10,7 +10,7 @@ class Eatery:
         '''
         self.name = name
         self.category = category
-        self.status = False
+        self._status = False
         Eatery.base.append(self)
 
     def __str__(self):
@@ -24,9 +24,13 @@ class Eatery:
         - Categoria
         - Status
         '''
+        print(f"{'Nome do Restaurante'.ljust(20)} | {'Categoria'.ljust(20)} | {'Status'}")
         for this in Eatery.base:
-            print(f'{this.name} | {this.category} | {this.status}')
+            print(f'{this.name.ljust(20)} | {this.category.ljust(20)} | {this.status}')
 
+    @property
+    def status(self):
+        return '☑' if self._status else '☐'
 
 box_mineito = Eatery('Box Mineiro', 'Caseiro')
 box_mineito = Eatery('La Carbonara', 'Italiano')
