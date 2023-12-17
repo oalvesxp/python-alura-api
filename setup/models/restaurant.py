@@ -37,11 +37,3 @@ class Eatery:
     def update_status(self):
         '''Altera o valor do status do objeto.'''
         self._status = not self._status
-
-
-## Testes e validações
-box_mineito = Eatery('Box Mineiro', 'Caseiro')
-la_carbonara = Eatery('la carbonara', 'Italiano')
-box_mineito.update_status()
-
-Eatery.list_eatery()
