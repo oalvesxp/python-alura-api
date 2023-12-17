@@ -30,7 +30,7 @@ class Eatery:
         '''
         print(f"{'Nome do Restaurante'.ljust(20)} | {'Categoria'.ljust(20)} | {'Avaliação'.ljust(20)} | {'Status'}")
         for this in cls.base:
-            print(f'{this._name.ljust(20)} | {this.category.ljust(20)} | {this.rating_avg} | {this.status}')
+            print(f'{this._name.ljust(20)} | {this.category.ljust(20)} | {str(this.rating_avg).ljust(20)} | {this.status}')
 
     @property
     def status(self):
@@ -54,7 +54,7 @@ class Eatery:
         - Nota média
         '''
         if not self._rating:
-            return 0
+            return '-'
         
         total_grade = sum(this._grade for this in self._rating)
         count_grade = len(self._rating)
