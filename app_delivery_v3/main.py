@@ -11,8 +11,7 @@ pizza.add_menu(juice)
 pizza.add_menu(plate)
 
 def main():
-    print(juice)
-    print(plate)
+    pizza.show_menu
 
 if __name__ == '__main__':
     main()

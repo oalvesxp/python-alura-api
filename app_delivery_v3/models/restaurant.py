@@ -64,13 +64,15 @@ class Eatery:
         average = round(total_grade / count_grade, 1)
         
         return average
-    
-    # def add_drink(self, drink):
-    #     self._menu.append(drink)
-
-    # def add_dish(self, dish):
-    #     self._menu.append(dish)
 
     def add_menu(self, value):
         if isinstance(value, EateryMenu):
             self._menu.append(value)
+    
+    @property
+    def show_menu(self):
+        print(f'Cardápio do restaurante {self._name}\n')
+        
+        for i, item in enumerate(self._menu, start=1):
+            message = f'{i}. Nome: {item._name} | Preço: R${item._price}'
+            print(message)
