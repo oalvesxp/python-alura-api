@@ -16,7 +16,8 @@ class Eatery:
     def __str__(self):
         return self._name
     
-    def list_eatery():
+    @classmethod
+    def list_eatery(cls):
         '''Lista todos os restaurantes cadastrados
         
         Output:
@@ -25,7 +26,7 @@ class Eatery:
         - Status
         '''
         print(f"{'Nome do Restaurante'.ljust(20)} | {'Categoria'.ljust(20)} | {'Status'}")
-        for this in Eatery.base:
+        for this in cls.base:
             print(f'{this._name.ljust(20)} | {this.category.ljust(20)} | {this.status}')
 
     @property
