@@ -1,4 +1,5 @@
 from models.rating import Rating
+from models.menu.eatery_menu import EateryMenu
 
 class Eatery:
     base = []
@@ -64,8 +65,12 @@ class Eatery:
         
         return average
     
-    def add_drink(self, drink):
-        self._menu.append(drink)
+    # def add_drink(self, drink):
+    #     self._menu.append(drink)
 
-    def add_dish(self, dish):
-        self._menu.append(dish)
+    # def add_dish(self, dish):
+    #     self._menu.append(dish)
+
+    def add_menu(self, value):
+        if isinstance(value, EateryMenu):
+            self._menu.append(value)
