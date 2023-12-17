@@ -8,13 +8,13 @@ class Eatery:
         - Nome
         - Categoria
         '''
-        self.name = name
+        self._name = name.title()
         self.category = category
         self._status = False
         Eatery.base.append(self)
 
     def __str__(self):
-        return self.name
+        return self._name
     
     def list_eatery():
         '''Lista todos os restaurantes cadastrados
@@ -26,13 +26,16 @@ class Eatery:
         '''
         print(f"{'Nome do Restaurante'.ljust(20)} | {'Categoria'.ljust(20)} | {'Status'}")
         for this in Eatery.base:
-            print(f'{this.name.ljust(20)} | {this.category.ljust(20)} | {this.status}')
+            print(f'{this._name.ljust(20)} | {this.category.ljust(20)} | {this.status}')
 
     @property
     def status(self):
+        '''Altera o output do status do objeto Eatery'''
         return '☑' if self._status else '☐'
 
+
+## Testes e validações
 box_mineito = Eatery('Box Mineiro', 'Caseiro')
-box_mineito = Eatery('La Carbonara', 'Italiano')
+box_mineito = Eatery('la carbonara', 'Italiano')
 
 Eatery.list_eatery()
