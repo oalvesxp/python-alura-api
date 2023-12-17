@@ -14,6 +14,7 @@ class Eatery:
         self.category = category
         self._status = False
         self._rating = []
+        self._menu = []
         Eatery.base.append(self)
 
     def __str__(self):
@@ -62,3 +63,9 @@ class Eatery:
         average = round(total_grade / count_grade, 1)
         
         return average
+    
+    def add_drink(self, drink):
+        self._menu.append(drink)
+
+    def add_dish(self, dish):
+        self._menu.append(dish)
