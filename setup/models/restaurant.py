@@ -1,3 +1,5 @@
+from models.rating import Rating
+
 class Eatery:
     base = []
 
@@ -11,6 +13,7 @@ class Eatery:
         self._name = name.title()
         self.category = category
         self._status = False
+        self._rating = []
         Eatery.base.append(self)
 
     def __str__(self):
@@ -37,3 +40,7 @@ class Eatery:
     def update_status(self):
         '''Altera o valor do status do objeto.'''
         self._status = not self._status
+    
+    def get_rating(self, customer, grade):
+        this = Rating(customer, grade)
+        self._rating.append(this)
