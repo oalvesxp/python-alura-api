@@ -42,5 +42,22 @@ class Eatery:
         self._status = not self._status
     
     def get_rating(self, customer, grade):
+        '''Adiciona as avaliações a lista de avaliações dentro do objeto Eatery'''
         this = Rating(customer, grade)
         self._rating.append(this)
+    
+    @property
+    def rating_avg(self):
+        '''Calcula o valor da nota média que o restaurante recebeu
+        
+        Output:
+        - Nota média
+        '''
+        if not self._rating:
+            return 0
+        
+        total_grade = sum(this._grade for this in self._rating)
+        count_grade = len(self._grade)
+        average = round(total_grade / count_grade, 1)
+        
+        return average
