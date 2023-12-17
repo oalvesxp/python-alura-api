@@ -43,8 +43,9 @@ class Eatery:
     
     def get_rating(self, customer, grade):
         '''Adiciona as avaliações a lista de avaliações dentro do objeto Eatery'''
-        this = Rating(customer, grade)
-        self._rating.append(this)
+        if 0 < grade <= 5:
+            this = Rating(customer, grade)
+            self._rating.append(this)
     
     @property
     def rating_avg(self):
